@@ -48,21 +48,13 @@ jobs:
         uses: montudor/action-zip@v0.1.0
         with:
           args: zip -qq -r ./bundle.zip ./
-    
-      # Credentials to connect to AWS
-      - name: Configure AWS credentials from Production account
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-          profile_name: default
-          project_name: resume-api
-          runtime: python3.8
 
       # Deploy main.py to AWS
       - name: AWS Lambda Deploy
         uses: appleboy/lambda-action@master
         with:
-              function_name: resume-api
-              zip_file: bundle.zip
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+          function_name: resume-api
+          zip_file: bundle.zip
