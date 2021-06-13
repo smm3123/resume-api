@@ -73,6 +73,11 @@ class Education:
     gpa: str
     courses: List[str]
 
+    def __init__(self, institution: str, area: str, study_type: str):
+        self.institution = institution
+        self.area = area
+        self.study_type = study_type
+
 
 class Award:
     title: str

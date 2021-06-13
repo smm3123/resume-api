@@ -1,5 +1,6 @@
 import src.schemas.resume as resume_schema
 import src.helpers.work_helper as work_helper
+import src.helpers.education_helper as education_helper
 from typing import List
 
 
@@ -32,8 +33,17 @@ def get_work() -> List[resume_schema.Work]:
     return work
 
 
+def get_education() -> List[resume_schema.Education]:
+    ut_austin = education_helper.get_ut_austin_education()
+    osu = education_helper.get_osu_education()
+    uh = education_helper.get_uh_education()
+    education = [ut_austin, osu, uh]
+    return education
+
+
 def get_resume() -> resume_schema.Resume:
     resume = resume_schema.Resume()
     resume.basics = get_basics()
     resume.work = get_work()
+    resume.education = get_education()
     return resume
