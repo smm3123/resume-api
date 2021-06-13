@@ -85,6 +85,10 @@ class Award:
     awarder: str
     summary: str
 
+    def __init__(self, title: str, awarder: str):
+        self.title = title
+        self.awarder = awarder
+
 
 class Publication:
     name: str
@@ -103,6 +107,10 @@ class Skill:
 class Language:
     language: str
     fluency: str
+
+    def __init__(self, language: str, fluency: str):
+        self.language = language
+        self.fluency = fluency
 
 
 class Interest:

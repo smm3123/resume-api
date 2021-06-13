@@ -41,9 +41,27 @@ def get_education() -> List[resume_schema.Education]:
     return education
 
 
+def get_awards() -> List[resume_schema.Award]:
+    academic_scholarship = resume_schema.Award("Academic Scholarship", "University of Houston")
+    deans_list = resume_schema.Award("Dean's List", "University of Houston")
+    magna_cum_laude = resume_schema.Award("Magna Cum Laude", "University of Houston")
+    awards = [academic_scholarship, deans_list, magna_cum_laude]
+    return awards
+
+
+def get_languages() -> List[resume_schema.Language]:
+    english = resume_schema.Language("English", "Native")
+    urdu = resume_schema.Language("Urdu", "Fluent")
+    spanish = resume_schema.Language("Spanish", "Beginner")
+    languages = [english, urdu, spanish]
+    return languages
+
+
 def get_resume() -> resume_schema.Resume:
     resume = resume_schema.Resume()
     resume.basics = get_basics()
     resume.work = get_work()
     resume.education = get_education()
+    resume.awards = get_awards()
+    resume.languages = get_languages()
     return resume
