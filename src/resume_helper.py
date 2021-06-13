@@ -1,4 +1,5 @@
 from src.resume import *
+from typing import List
 
 
 def get_profiles() -> List[Profile]:
