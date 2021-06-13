@@ -1,4 +1,5 @@
 import src.schemas.resume as resume_schema
+import src.helpers.work_helper as work_helper
 from typing import List
 
 
@@ -25,9 +26,9 @@ def get_basics() -> resume_schema.Basics:
 
 def get_work() -> List[resume_schema.Work]:
     is_volunteer = False
-    quorum = resume_schema.Work(is_volunteer, "Quorum Software", "Software Engineer", "2021-06-14", "Present")
-    reyrey = resume_schema.Work(is_volunteer, "Reynolds & Reynolds", "Software Developer", "2019-06-03", "2021-06-04")
-    mckesson = resume_schema.Work(is_volunteer, "McKesson Specialty Health", "IT Intern", "2018-05-04", "2018-08-13")
+    quorum = work_helper.get_quorum_work()
+    reyrey = work_helper.get_reyrey_work()
+    mckesson = work_helper.get_mckesson_work()
     work = [quorum, reyrey, mckesson]
     return work
 
