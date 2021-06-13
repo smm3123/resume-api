@@ -48,7 +48,7 @@ def get_skills() -> List[resume_schema.Skill]:
               "Jenkins", "Octopus Deploy"]
     skills_list = []
     for skill in skills:
-        skills_list.append(resume_schema.Skill(skill))
+        skills_list.append(resume_schema.Skill(skill, "", []))
     return skills_list
 
 

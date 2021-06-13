@@ -103,8 +103,10 @@ class Skill:
     level: str
     keywords: List[str]
 
-    def __init__(self, name):
+    def __init__(self, name: str, level: str, keywords: List[str]):
         self.name = name
+        self.level = level
+        self.keywords = keywords
 
 
 class Language:
