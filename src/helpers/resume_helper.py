@@ -41,6 +41,17 @@ def get_education() -> List[resume_schema.Education]:
     return education
 
 
+def get_skills() -> List[resume_schema.Skill]:
+    skills = ["C#", "SQL (MS SQL Server)", "Python", "JavaScript", "HTML", "CSS/Sass", "XML", "XSLT", "C", "Java",
+              "ASP.NET", "jQuery", "Bootstrap", "Node.js", "Selenium", "MS Unit Test Framework", "iText",
+              "Git", "SVN", "Visual Studio", "Visual Studio Code", "SQL Server Management Studio",
+              "Jenkins", "Octopus Deploy"]
+    skills_list = []
+    for skill in skills:
+        skills_list.append(resume_schema.Skill(skill))
+    return skills_list
+
+
 def get_awards() -> List[resume_schema.Award]:
     academic_scholarship = resume_schema.Award("Academic Scholarship", "University of Houston")
     deans_list = resume_schema.Award("Dean's List", "University of Houston")
@@ -62,6 +73,7 @@ def get_resume() -> resume_schema.Resume:
     resume.basics = get_basics()
     resume.work = get_work()
     resume.education = get_education()
+    resume.skills = get_skills()
     resume.awards = get_awards()
     resume.languages = get_languages()
     return resume
