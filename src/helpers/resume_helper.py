@@ -25,7 +25,6 @@ def get_basics() -> resume_schema.Basics:
 
 
 def get_work() -> List[resume_schema.Work]:
-    is_volunteer = False
     quorum = work_helper.get_quorum_work()
     reyrey = work_helper.get_reyrey_work()
     mckesson = work_helper.get_mckesson_work()
