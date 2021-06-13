@@ -1,5 +1,5 @@
 import json
-from src.resume_helper import get_resume
+from src.helpers.resume_helper import get_resume
 
 
 def lambda_handler(event, context):
