@@ -9,12 +9,16 @@ def get_profiles() -> List[resume_classes.Profile]:
     return profiles
 
 
+def get_location() -> resume_classes.Location:
+    return resume_classes.Location(None, None, "Houston", "TX")
+
+
 def get_basics() -> resume_classes.Basics:
     basics = resume_classes.Basics()
     basics.name = "Syed Mahdi"
     basics.label = "Software Engineer"
     basics.email = "syedmahdi3123@gmail.com"
-    basics.location = "Houston, TX"
+    basics.location = get_location()
     basics.profiles = get_profiles()
     return basics
 

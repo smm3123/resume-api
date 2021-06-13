@@ -7,7 +7,7 @@ class Profile:
     username: str
     url: str
 
-    def __init__(self, network, username, url):
+    def __init__(self, network: str, username: str, url: str):
         self.network = network
         self.username = username
         self.url = url
@@ -17,8 +17,15 @@ class Location:
     address: str
     postal_code: str
     city: str
+    state: str
     country_code: str
     region: str
+
+    def __init__(self, address: str, postal_code: str, city: str, state: str):
+        self.address = address
+        self.postal_code = postal_code
+        self.city = city
+        self.state = state
 
 
 class Basics:
