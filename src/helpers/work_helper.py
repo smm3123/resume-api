@@ -3,7 +3,7 @@ is_volunteer = False
 
 
 def get_quorum_work() -> Work:
-    quorum = Work(is_volunteer, "Quorum Software", "Software Engineer", "2021-06-14", "Present")
+    quorum = Work(is_volunteer, "Quorum Software", "Software Engineer I", "2021-06-14", "Present")
     return quorum
 
 
