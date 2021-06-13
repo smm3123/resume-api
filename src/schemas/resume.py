@@ -1,5 +1,5 @@
 """
-Class definitions based off of the JSON Resume schema found here: https://jsonresume.org/schema/
+Class definitions based off of the JSON Resume schemas found here: https://jsonresume.org/schema/
 """
 
 from datetime import datetime

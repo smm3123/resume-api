@@ -1,4 +1,4 @@
-import src.resume as resume_schema
+import src.schemas.resume as resume_schema
 from typing import List
 
 
