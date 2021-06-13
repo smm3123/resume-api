@@ -23,7 +23,17 @@ def get_basics() -> resume_schema.Basics:
     return basics
 
 
+def get_work() -> List[resume_schema.Work]:
+    is_volunteer = False
+    quorum = resume_schema.Work(is_volunteer, "Quorum Software", "Software Engineer", "2021-06-14", "Present")
+    reyrey = resume_schema.Work(is_volunteer, "Reynolds & Reynolds", "Software Developer", "2019-06-03", "2021-06-04")
+    mckesson = resume_schema.Work(is_volunteer, "McKesson Specialty Health", "IT Intern", "2018-05-04", "2018-08-13")
+    work = [quorum, reyrey, mckesson]
+    return work
+
+
 def get_resume() -> resume_schema.Resume:
     resume = resume_schema.Resume()
     resume.basics = get_basics()
+    resume.work = get_work()
     return resume

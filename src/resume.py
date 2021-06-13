@@ -54,6 +54,15 @@ class Work:
     summary: str
     highlights: List[str]
 
+    def __init__(self, is_volunteer: bool, name: str, position: str, start_date: datetime, end_date: datetime):
+        if is_volunteer:
+            self.organization = name
+        else:
+            self.company = name
+        self.position = position
+        self.start_date = start_date
+        self.end_date = end_date
+
 
 class Education:
     institution: str
