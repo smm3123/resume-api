@@ -18,3 +18,20 @@ Once the function is created, you can edit the lambda handler using the editor i
 ![code source](https://github.com/smm3123/resume-api/blob/main/img/lambda_code_source.jpg)
 
 While it was possible to just write all of the code in this editor, having version control on the codebase was much more appealing. To do this, I set up a continuous integration workflow using GitHub Actions. The YAML file for the configuration can be found [here](https://github.com/smm3123/resume-api/blob/main/.github/workflows/main.yml). This allows me to directly work on this repo and have all of the changes pushed to the main branch automatically deploy to the Lambda function. As a result, I can view the code from this repo in the editor found in the Lambda console (seen in the picture above). I can still edit the code using their editor, however any changes made there are overwritten once a commit is made here. 
+
+Due to personal preference, I changed the file structure from what the default Lambda function provided. Because of this, the Lambda function handler had to be updated in the Runtime Settings ([more info](https://docs.aws.amazon.com/lambda/latest/dg/python-handler.html)).
+
+Since the lambda handler method in this project is found in src/main.py, the Runtime Settings for the Lambda function had to be updated as such:
+
+![runtime settings](https://github.com/smm3123/resume-api/blob/main/img/lambda_runtime_settings.jpg)
+
+## Adding Triggers and the API Endpoint
+
+The final step in setting everything up was actually triggering the Lambda function. This step simply required me to navigate to the Lambda function's Configuration section and adding a trigger. The actual trigger configuration wasn't too involved:
+
+![trigger configuration](https://github.com/smm3123/resume-api/blob/main/img/lambda_trigger.jpg)
+
+Once this was set up, the trigger successfully appeared in the Lambda function's console with the necessary information and the [API was made accessible](https://9t130sagn0.execute-api.us-east-1.amazonaws.com/default/resume-api):
+
+![lambda configuration](https://github.com/smm3123/resume-api/blob/main/img/lambda_configuration.jpg)
+
