@@ -2,14 +2,14 @@ from src.schemas.resume import Education
 
 
 def get_ut_austin_education() -> Education:
-    ut_austin = Education("University of Texas at Austin", "Computer Science", "Masters of Science")
+    ut_austin = Education("University of Texas at Austin", "Computer Science", "Master of Science")
     ut_austin.start_date = "2021-08-25"
     ut_austin.end_date = "Present"
     return ut_austin
 
 
 def get_osu_education() -> Education:
-    osu = Education("Oregon State University", "Computer Science", "Bachelors of Science")
+    osu = Education("Oregon State University", "Computer Science", "Bachelor of Science")
     osu.start_date = "2019-09-09"
     osu.end_date = "2021-08-13"
     osu.gpa = "3.76"
@@ -33,7 +33,7 @@ def get_osu_education() -> Education:
 
 
 def get_uh_education() -> Education:
-    uh = Education("University of Houston", "Management Information Systems", "Bachelors of Business Administration")
+    uh = Education("University of Houston", "Management Information Systems", "Bachelor of Business Administration")
     uh.start_date = "2015-08-24"
     uh.end_date = "2019-05-18"
     uh.gpa = "Cumulative: 3.54, Major: 4.0"
