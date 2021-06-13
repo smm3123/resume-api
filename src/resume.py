@@ -1,11 +1,17 @@
 from datetime import datetime
 from typing import List, Optional
+import json
 
 
 class Profile:
     network: str
     username: str
     url: str
+
+    def __init__(self, network, username, url):
+        self.network = network
+        self.username = username
+        self.url = url
 
 
 class Location:
