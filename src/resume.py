@@ -1,3 +1,7 @@
+"""
+Class definitions based off of the JSON Resume schema found here: https://jsonresume.org/schema/
+"""
+
 from datetime import datetime
 from typing import List, Optional
 
